@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Color Picker</title>
+    <link rel="stylesheet" href="stylesheet.css"/>
+</head>
+<body>
+<div id="box">
+<p id="waardes">RGB(0, 0, 0)</p>
+<div>
+    R<input type="range" min="0" max="255" value="50" class="slider" id="red" oninput="colors()">
+</div>
+<div>
+    G<input type="range" min="0" max="255" value="50" class="slider" id="green" oninput="colors()">
+</div>
+<div>
+    B<input type="range" min="0" max="255" value="50" class="slider" id="blue" oninput="colors()">
+</div>
+<div id="colordiv"></div>
+</div>
+</body>
+<script>
+    function colors(){
+        let red = document.getElementById("red").value;
+        let green = document.getElementById("green").value;
+        let blue = document.getElementById("blue").value;
+        let waardes = document.getElementById("waardes");
+        let colordiv = document.getElementById("colordiv");
+
+        waardes.innerHTML = 'rgb('+ red + ',' + green + ',' + blue + ')';
+        colordiv.style.backgroundColor = 'rgb('+ red + ',' + green + ',' + blue + ')';
+    }
+</script>
+</html>
